@@ -6,10 +6,16 @@ function submitForm(){
     let email = document.getElementById("mail").value
     let password = document.getElementById("password").value
 
-    if (firstName == "" || lastName == "" || phoneNumber == "" || classgrade == "" || email == "" || password == ""){
-        errMSG.style.display = 'block'
+    let confirmation = confirm("Are you sure you want to submit")
+    if (confirmation){
+        if (firstName == "" || lastName == "" || phoneNumber == "" || classgrade == "" || email == "" || password == ""){
+            errMSG.style.display = 'block'
+        }else{
+    
+        }
     }else{
-        
+        return
     }
+
 
 }
