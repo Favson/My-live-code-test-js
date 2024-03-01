@@ -1,3 +1,5 @@
+studentInfo =[]
+
 function submitForm(){
     let firstName = document.getElementById('firstName').value
     let lastName = document.getElementById('lastName').value
@@ -10,9 +12,23 @@ function submitForm(){
     if (confirmation){
         if (firstName == "" || lastName == "" || phoneNumber == "" || classgrade == "" || email == "" || password == ""){
             errMSG.style.display = 'block'
+            setTimeout(()=>{
+                errMSG.style.display= 'none'
+            }, 4000);
         }else{
-    
+           let studentObj = {firstName, lastName, phoneNumber, classgrade, email, password}
+
+            studentInfo.push('studentObj')
+            document.getElementById("firstName").value =""
+            document.getElementById('lastName').value = ""
+            document.getElementById('mail').value = ""
+            document.getElementById('phoneNumber').value =""
+            document.getElementById("password").value =""
+            document.getElementById('classgrade').value=""
+
+            window.location("dashboard.html")
         }
+
     }else{
         return
     }
