@@ -1,4 +1,4 @@
-studentInfo =[]
+let studentInfo =[]
 
 function submitForm(){
     let firstName = document.getElementById('firstName').value
@@ -19,14 +19,15 @@ function submitForm(){
            let studentObj = {firstName, lastName, phoneNumber, classgrade, email, password}
 
             studentInfo.push('studentObj')
+            localStorage.setItem("studentVar", JSON.stringify(studentInfo))
             document.getElementById("firstName").value =""
             document.getElementById('lastName').value = ""
             document.getElementById('mail').value = ""
             document.getElementById('phoneNumber').value =""
             document.getElementById("password").value =""
             document.getElementById('classgrade').value=""
-
-            window.location("dashboard.html")
+            
+            window.location.href = "dashboard.html"
         }
 
     }else{
