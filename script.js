@@ -18,7 +18,7 @@ function submitForm(){
         }else{
            let studentObj = {firstName, lastName, phoneNumber, classgrade, email, password}
 
-            studentInfo.push('studentObj')
+            studentInfo.push(studentObj) // Corrected this line
             localStorage.setItem("studentVar", JSON.stringify(studentInfo))
             document.getElementById("firstName").value =""
             document.getElementById('lastName').value = ""
@@ -34,9 +34,6 @@ function submitForm(){
     }
 }
 
-studentInfo = JSON.parse(localStorage.getItem("studentVar")) || [];
-
-
 function show(){
    let myTable = document.getElementById("myTable")
 
@@ -47,7 +44,7 @@ function show(){
         <tr>
             <td class="col-1"><p>${x + 1}</p></td>
             <td class="col-4"><p>${studentInfo[x].firstName} ${studentInfo[x].lastName}</p></td>
-            <td class="col-4"><p>${studentInfo[x].mail}</p></td>
+            <td class="col-4"><p>${studentInfo[x].email}</p></td>
             <td class="col-4"><p>${studentInfo[x].classgrade}</p></td>
             <td class="col-3">
             <button class="btn btn-danger" onclick="deleted(${x})">DELETE</button>
