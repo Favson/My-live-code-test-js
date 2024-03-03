@@ -26,13 +26,15 @@ function submitForm(){
             document.getElementById('phoneNumber').value =""
             document.getElementById("password").value =""
             document.getElementById('classgrade').value=""
-            
             window.location.href = "dashboard.html"
         }
 
     }else{
         return
     }
+}
+studentInfo = JSON.parse(localStorage.getItem("studentVar"));
 
-
+function show(){
+    
 }
