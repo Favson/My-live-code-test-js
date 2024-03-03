@@ -33,7 +33,9 @@ function submitForm(){
         return
     }
 }
-studentInfo = JSON.parse(localStorage.getItem("studentVar"));
+
+studentInfo = JSON.parse(localStorage.getItem("studentVar")) || [];
+
 
 function show(){
    let myTable = document.getElementById("myTable")
@@ -45,11 +47,13 @@ function show(){
         <tr>
             <td class="col-1"><p>${x + 1}</p></td>
             <td class="col-4"><p>${studentInfo[x].firstName} ${studentInfo[x].lastName}</p></td>
-            <td class="col-4"><p>${studentInfo[x].mailPhone}</p></td>
+            <td class="col-4"><p>${studentInfo[x].mail}</p></td>
+            <td class="col-4"><p>${studentInfo[x].classgrade}</p></td>
             <td class="col-3">
             <button class="btn btn-danger" onclick="deleted(${x})">DELETE</button>
             <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#staticBackdrop${x}"><i class="fa-regular fa-pen-to-square fw-5"></i></button>
             </td>
+
         </tr>
         `
    }
