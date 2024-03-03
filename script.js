@@ -16,7 +16,7 @@ function submitForm(){
                 errMSG.style.display= 'none'
             }, 4000);
         }else{
-           let studentObj = {firstName, lastName, phoneNumber, classgrade, email, password}
+           let studentObj = {firstName, lastName, classgrade, email}
 
             studentInfo.push(studentObj) // Corrected this line
             localStorage.setItem("studentVar", JSON.stringify(studentInfo))
@@ -56,4 +56,6 @@ function show(){
    }
 }
 
-show();
+window.onload = function() {
+    show();
+};
