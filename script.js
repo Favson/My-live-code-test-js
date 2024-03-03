@@ -55,3 +55,5 @@ function show(){
         `
    }
 }
+
+show()
